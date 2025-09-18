@@ -8,13 +8,15 @@
 
 body {
     color: var(--text);
-    background: var(--background)
+    background: var(--background);
+    font-family: "Oswald";
 }
 
 h1,
 h2,
 h3{
-    color: var(--text)
+    color: var(--text);
+    font-family: "Tinos";
 }
 
 li::marker{
