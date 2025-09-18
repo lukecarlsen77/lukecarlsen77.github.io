@@ -1,0 +1,33 @@
+:root {
+--text: #000000;
+--background: #da8e36;
+--primary: #38ca81;
+--secondary: #69b08c;
+--accent: #e8d445;
+}
+
+body {
+    color: var(--text);
+    background: var(--background)
+}
+
+h1,
+h2,
+h3{
+    color: var(--text)
+}
+
+li::marker{
+    color: var(--secondary);
+}
+
+img{
+    padding: 4px;
+    border: 4px solid var(--secondary)
+    border-radius: 16px;
+    background: var(--primary)
+}
+
+audio{
+    background: var(--accent);
+}
