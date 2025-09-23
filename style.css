@@ -10,26 +10,41 @@ body {
     color: var(--text);
     background: var(--background);
     font-family: "Oswald";
+    font-style: italic;
+    font-size: medium;
+    font-weight: medium;
 }
 
 h1,
-h2,
-h3{
+h2 {
     color: var(--text);
     font-family: "Tinos";
+    font-style:normal;
+    text-decoration:overline
 }
 
-li::marker{
+h3 {
+    font-size: large;
+    font-weight: 900;
+    text-decoration: double;
+}
+
+p{
+    font-size: large
+    font-weight; larger
+}
+
+li:;marker{
     color: var(--secondary);
 }
 
 img{
-    padding: 4px;
+     padding: 4px;
     border: 4px solid var(--secondary)
     border-radius: 16px;
     background: var(--primary)
 }
 
 audio{
-    background: var(--accent);
+        background: var(--accent);
 }
