@@ -83,44 +83,29 @@ a:active {
 }
 
 <style>
-  .trail {
+  .trail { /* className for the trail elements */
     position: absolute;
-    height: 6px;
-    width: 6px;
-    border-radius: 50%;
+    height: 6px; width: 6px;
+    border-radius: 3px;
     background: teal;
-    box-shadow: 0 0 5px teal, 0 0 10px teal; 
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out; 
-    pointer-events: none; 
   }
   body {
-    height: 300px; 
+    height: 300px;
   }
 </style>
+
 <script>
-  const body = document.body;
-  const numDots = 20;
-  const dots = [];
-
-  for (let i = 0; i < numDots; i++) {
-    const dot = document.createElement('div');
-    dot.classList.add('trail');
-    body.appendChild(dot);
-    dots.push(dot);
-  }
-
-  document.addEventListener('mousemove', (event) => {
-    dots[0].style.left = `${event.pageX}px`;
-    dots[0].style.top = `${event.pageY}px`;
-
-    for (let i = 1; i < numDots; i++) {
-      setTimeout(() => {
-        dots[i].style.left = `${dots[i-1].style.left}`;
-        dots[i].style.top = `${dots[i-1].style.top}`;
-        const scale = 1 - (i / numDots) * 0.8;
-        dots[i].style.transform = `scale(${scale})`;
-        dots[i].style.opacity = scale;
-      }, i * 15);
-    }
+  const trails = [];
+  document.addEventListener('mousemove', (e) => {
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+    trail.style.left = `${e.pageX}px`;
+    trail.style.top = `${e.pageY}px`;
+    document.body.appendChild(trail);
+    trails.push(trail);
+    setTimeout(() => {
+      trail.remove();
+      trails.shift();
+    }, 500);
   });
 </script>
