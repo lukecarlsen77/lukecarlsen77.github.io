@@ -11,7 +11,17 @@
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mouse_trail style.css"
+    <style>
+  .trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+  }
+  body {
+    height: 300px;
+  }
+</style>
 </head>
 
 <body>
@@ -56,5 +66,25 @@
         <a href="https://store.steampowered.com/app/745920/Temtem/"><strong>Tem Tem</strong></a>
     </h3>
     <audio controls src="Audio/Lukes song 2.wav"></audio>
+    <script>
+  const trailElements = [];
+  const trailCount = 10;
+
+  for (let i = 0; i < trailCount; i++) {
+    const trailElement = document.createElement('div');
+    trailElement.className = 'trail';
+    document.body.appendChild(trailElement);
+    trailElements.push(trailElement);
+  }
+
+  let currentIndex = 0;
+
+  document.addEventListener('mousemove', (event) => {
+    const trailElement = trailElements[currentIndex];
+    trailElement.style.left = `${event.pageX}px`;
+    trailElement.style.top = `${event.pageY}px`;
+    currentIndex = (currentIndex + 1) % trailCount;
+  });
+</script>
 </body>
 </html>
