@@ -117,10 +117,12 @@
         const systemMode = document.getElementById("systemMode")
 
         btnSubmit.addEventListener("click", () => {
-
+        const isSubscribed = subscribeBox.checked ? "Subscribed" : "Not Subscribed";
+        const selectedMode = document.querySelector('input[name="mode"]:checked').value;
+        modeOutput.innerHTML = `You are in ${selectedMode} mode. ${isSubscribed}.`;
+        });
             // TODO: Find which radio button is checked and display it.
             // Challenge: Include whether the user subscribed or not.
-        });
     </script>
 </body>
 
