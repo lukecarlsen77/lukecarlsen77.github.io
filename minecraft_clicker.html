@@ -5,31 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Clicker Game</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        #image {
-            width: 200px;
-            height: auto;
-            margin: 20px;
-        }
-
-        #clicks {
-            font-size: 24px;
-            margin: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="minecraft_clicker.css">
 </head>
 
 <body>
-    <h1>Minecraft Clicker</h1>
-    < id="image" src="Grass_Block_JE2.webp" alt="Grass Block Image"> 
+    <h1>Minecraft Clicker</h1> 
+    <image id = "image" img src = "Grass_Block_JE2.webp" alt = "grass block image">
     <div id="clicks">Clicks: 0</div>
     <button id="clickButton">Mine</button>
-    <button id="upgrade-button">Buy wooden pickaxe (Cost: 10)</button>
+    <h2>Upgrades</h2>
+    <p>Increase click power by 1 costs <span id="upgradeCost">10</span> clicks</p>
+    <button id="upgradeButton">Buy Upgrade</button>
     <script>
         let clickCount = 0;
         const image = document.getElementById('image');
@@ -73,36 +59,7 @@
                 image.src = "image10.jpg";
             }
         });
-        
-        let clickValue = 1; 
-        let upgradeCost = 10;
-
-        const mainClicker = document.getElementById('main-clicker');
-        const upgradeButton = document.getElementById('upgrade-button');
-
-        function updateScoreDisplay() {
-            scoreDisplay.textContent = score;
-        }
-
-        mainClicker.addEventListener('click', () => {
-            score += clickValue;
-            updateScoreDisplay();
-        });
-
-        upgradeButton.addEventListener('click', () => {
-            if (score >= upgradeCost) {
-                score -= upgradeCost;
-                clickValue += 1; 
-                upgradeCost *= 2;
-                updateScoreDisplay();
-                upgradeButton.textContent = `Buy +1 Click Upgrade (Cost: ${upgradeCost})`;
-        } else {
-            alert('Not enough score to buy this upgrade!');
-        }
-    });
-
-    updateScoreDisplay();
+            
     </script>
 </body>
-
 </html>
