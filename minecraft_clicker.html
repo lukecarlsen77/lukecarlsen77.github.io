@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,26 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+
         #image {
             width: 200px;
             height: auto;
             margin: 20px;
         }
+
         #clicks {
             font-size: 24px;
             margin: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1>Minecraft Clicker</h1>
-    <img id="block" src="Grass_Block_JE2.webp" alt="Grass Block Image">
+    < id="image" src="Grass_Block_JE2.webp" alt="Grass Block Image"> 
     <div id="clicks">Clicks: 0</div>
     <button id="clickButton">Mine</button>
+    <button id="upgrade-button">Buy wooden pickaxe (Cost: 10)</button>
     <script>
         let clickCount = 0;
         const image = document.getElementById('image');
@@ -34,44 +39,70 @@
         clickButton.addEventListener('click', () => {
             clickCount++;
             clicksDisplay.textContent = 'Clicks: ' + clickCount;
-        const images = [
-            "image1.jpg",
-            "image2.jpg",
-            "image3.jpg",
-            "image4.jpg",
-            "image5.jpg",
-            "image6.jpg",
-            "image7.jpg",
-            "image8.jpg",
-            "image9.jpg",
-            "image10.jpg"
-        ];
-        });
-
-        image.addEventListener('click', function() {
-            clickCount++;
+            const images = [
+                "image1.jpg",
+                "image2.jpg",
+                "image3.jpg",
+                "image4.jpg",
+                "image5.jpg",
+                "image6.jpg",
+                "image7.jpg",
+                "image8.jpg",
+                "image9.jpg",
+                "image10.jpg",
+            ]
             if (clickCount === 10) {
-                image.src = image1.jpg;
+                image.src = "image1.jpg";
             } else if (clickCount === 20) {
-                image.src = image2.jpg;
+                image.src = "image2.jpg";
             } else if (clickCount === 50) {
-                image.src = image3.jpg;
+                image.src = "image3.jpg";
             } else if (clickCount === 125) {
-                image.src = image4.jpg;
+                image.src = "image4.jpg";
             } else if (clickCount === 150) {
-                image.src = image5.jpg;
+                image.src = "image5.jpg";
             } else if (clickCount === 250) {
-                image.src = image6.jpg;
+                image.src = "image6.jpg";
             } else if (clickCount === 300) {
-                image.src = image7.jpg;
+                image.src = "image7.jpg";
             } else if (clickCount === 350) {
-                image.src = image8.jpg;
+                image.src = "image8.jpg";
             } else if (clickCount === 670) {
-                image.src = image9.jpg;
+                image.src = "image9.jpg";
             } else if (clickCount === 671) {
-                image.src = image10.jpg;
+                image.src = "image10.jpg";
             }
         });
+        
+        let clickValue = 1; 
+        let upgradeCost = 10;
+
+        const mainClicker = document.getElementById('main-clicker');
+        const upgradeButton = document.getElementById('upgrade-button');
+
+        function updateScoreDisplay() {
+            scoreDisplay.textContent = score;
+        }
+
+        mainClicker.addEventListener('click', () => {
+            score += clickValue;
+            updateScoreDisplay();
+        });
+
+        upgradeButton.addEventListener('click', () => {
+            if (score >= upgradeCost) {
+                score -= upgradeCost;
+                clickValue += 1; 
+                upgradeCost *= 2;
+                updateScoreDisplay();
+                upgradeButton.textContent = `Buy +1 Click Upgrade (Cost: ${upgradeCost})`;
+        } else {
+            alert('Not enough score to buy this upgrade!');
+        }
+    });
+
+    updateScoreDisplay();
     </script>
 </body>
+
 </html>
