@@ -1,32 +1,40 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
 
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-weight: 700;
-            color: #ffffff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
-        }
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-        h1,
-        h2,
-        p,
-        #clicks,
-        button {
-            font-weight: 800;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
-        }
+h1,
+h2,
+p,
+#clicks,
+button {
+    font-weight: 800;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.75);
+}
 
-        #image {
-            width: 200px;
-            height: auto;
-            margin: 20px;
-        }
+#image {
+    width: 200px;
+    height: auto;
+    margin: 20px;
+}
 
-        #clicks {
-            font-size: 24px;
-            margin: 20px;
-        }
+#clicks {
+    font-size: 24px;
+    margin: 20px;
+}
 
-        button {
-            cursor: pointer;
-        }
+button {
+    cursor: pointer;
+}
