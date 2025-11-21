@@ -9,76 +9,68 @@
 </head>
 
 <body>
-    <h1>Minecraft Clicker</h1> 
-    <image id = "image" img src = "Grass_Block_JE2.webp" alt = "grass block image">
-    <div id="clicks">Clicks: 0</div>
-    <button id="clickButton">Mine</button>
-    <h2>Upgrades</h2>
-    <p>Increase click power by 1 costs <span id="upgradeCost">10</span> clicks</p>
-    <button id="upgradeButton">Buy Upgrade</button>
-    <script>
-        let clickCount = 0;
-        let clickValue = 1;
-        let upgradeCost = 10;
-        const image = document.getElementById('image');
-        const clicksDisplay = document.getElementById('clicks');
-        const clickButton = document.getElementById('clickButton');
-        const costDisplay = document.getElementById('upgradeCost');
-        const upgradeButton = document.getElementById('upgradeButton');
+    <h1>Minecraft Clicker</h1>
+    <image id="image" img src="Grass_Block_JE2.webp" alt="grass block image">
+        <div id="clicks">Clicks: 0</div>
+        <button id="clickButton">Mine</button>
+        <h2>Upgrades</h2>
+        <p>Increase click power by 1 costs <span id="upgradeCost">10</span> clicks</p>
+        <button id="upgradeButton">Buy Upgrade</button>
+        <script>
+            let clickCount = 0;
+            let clickValue = 1;
+            let upgradeCost = 10;
+            const image = document.getElementById('image');
+            const clicksDisplay = document.getElementById('clicks');
+            const clickButton = document.getElementById('clickButton');
+            const costDisplay = document.getElementById('upgradeCost');
+            const upgradeButton = document.getElementById('upgradeButton');
 
-        clickButton.addEventListener('click', () => {
-            clickCount++;
-            clicksDisplay.textContent = 'Clicks: ' + clickCount;
-            const images = [
-                "image1.jpg",
-                "image2.jpg",
-                "image3.jpg",
-                "image4.jpg",
-                "image5.jpg",
-                "image6.jpg",
-                "image7.jpg",
-                "image8.jpg",
-                "image9.jpg",
-                "image10.jpg",
-            ]
-            if (clickCount === 10) {
-                image.src = "image1.jpg";
-            } else if (clickCount === 20) {
-                image.src = "image2.jpg";
-            } else if (clickCount === 50) {
-                image.src = "image3.jpg";
-            } else if (clickCount === 125) {
-                image.src = "image4.jpg";
-            } else if (clickCount === 150) {
-                image.src = "image5.jpg";
-            } else if (clickCount === 250) {
-                image.src = "image6.jpg";
-            } else if (clickCount === 300) {
-                image.src = "image7.jpg";
-            } else if (clickCount === 350) {
-                image.src = "image8.jpg";
-            } else if (clickCount === 670) {
-                image.src = "image9.jpg";
-            } else if (clickCount === 671) {
-                image.src = "image10.jpg";
-            }
-        });
-        
-        clickButton.addEventListener('click', () => {
-            clickCount += clickValue;
-            clicksDisplay.textContent = 'Clicks: ' + clickCount;
-        });
-
-        upgradeButton.addEventListener('click', () => {
-            if (clickCount >= upgradeCost) {
-                clickValue++;
-                clickCount -= upgradeCost;
-                upgradeCost = Math.floor(upgradeCost * 1.5);
+            clickButton.addEventListener('click', () => {
+                clickCount += clickValue;
                 clicksDisplay.textContent = 'Clicks: ' + clickCount;
-                costDisplay.textContent = upgradeCost;
-            }
-        });
-        
-    </script>
+                if (clickCount === 10) {
+                    image.src = "image1.jpg";
+                } else if (clickCount === 20) {
+                    image.src = "image2.jpg";
+                } else if (clickCount === 50) {
+                    image.src = "image3.jpg";
+                } else if (clickCount === 125) {
+                    image.src = "image4.jpg";
+                } else if (clickCount === 150) {
+                    image.src = "image5.jpg";
+                } else if (clickCount === 250) {
+                    image.src = "image6.jpg";
+                } else if (clickCount === 300) {
+                    image.src = "image7.jpg";
+                } else if (clickCount === 350) {
+                    image.src = "image8.jpg";
+                } else if (clickCount === 670) {
+                    image.src = "image9.jpg";
+                } else if (clickCount === 671) {
+                    image.src = "image10.jpg";
+                }
+            });
+
+            document.body.style.backgroundImage = "url('Overworld_1.18.webp')";
+
+            if (clickCount >= 350) {
+                    document.body.style.backgroundImage = "url('1200px-The_End.png')";
+                } else if (clickCount >= 250) {
+                    document.body.style.backgroundImage = "url('the_nether.webp')";
+                }
+            
+            upgradeButton.addEventListener('click', () => {
+                if (clickCount >= upgradeCost) {
+                    clickValue++;
+                    clickCount -= upgradeCost;
+                    upgradeCost = Math.floor(upgradeCost * 1.5);
+                    clicksDisplay.textContent = 'Clicks: ' + clickCount;
+                    costDisplay.textContent = upgradeCost;
+                }
+            });
+
+        </script>
 </body>
+
 </html>
