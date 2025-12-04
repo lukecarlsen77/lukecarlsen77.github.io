@@ -38,3 +38,22 @@ button {
 button {
     cursor: pointer;
 }
+
+a:link {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+a:visited {
+  color: rgb(173, 65, 150);
+}
+
+a:hover {
+  color: rgb(252, 45, 45);
+}
+
+a:active {
+  color: blue;
+}
