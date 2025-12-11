@@ -61,22 +61,18 @@ h3::before {
     content: "•";
 }
 
-/* unvisited link */
 a:link {
   color: black;
 }
 
-/* visited link */
 a:visited {
   color: rgb(173, 65, 150);
 }
 
-/* mouse over link */
 a:hover {
   color: rgb(252, 45, 45);
 }
 
-/* selected link */
 a:active {
   color: blue;
 }
