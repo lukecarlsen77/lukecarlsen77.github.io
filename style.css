@@ -12,7 +12,7 @@ body {
     font-family: "Oswald";
     font-style: italic;
     font-size: medium;
-    font-weight: medium;
+    font-weight: 500;
     margin: 1em;
 }
 
@@ -34,8 +34,7 @@ h3 {
 
 p {
     font-size: large;
-    font-weight;
-    larger;
+    font-weight: 500;
     border: 1px;
     padding-left: 70px;
 }
